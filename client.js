@@ -4,7 +4,8 @@ const net = require('net');
  */
 const connect = function() {
   const conn = net.createConnection({ 
-    host: '172.46.2.204',
+    // host: '172.46.2.204',
+    host: '10.0.2.15',
     port: 50541
   });
   
@@ -12,24 +13,14 @@ const connect = function() {
     console.log('I am connected!')
     conn.write("Successfully connected to game server");
   });
-
-  conn.on('connect', () => {
-    conn.write('Name: RJO');
-  });
-
+// comment this in if you want to see initials on screen
   // conn.on('connect', () => {
-  //   conn.write('Move: up');
+  //   conn.write('Name: RJO');
   // });
   
   conn.setEncoding('utf8');
 
-  
-
-
   return conn;
 }
-
-// console.log('Connecting ...');
-// connect();
 
 module.exports = { connect };
