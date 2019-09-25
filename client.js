@@ -16,6 +16,10 @@ const connect = function() {
   conn.on('connect', () => {
     conn.write('Name: RJO');
   });
+
+  // conn.on('connect', () => {
+  //   conn.write('Move: up');
+  // });
   
   conn.setEncoding('utf8');
 
